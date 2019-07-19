@@ -63,7 +63,7 @@ func main() {
 	if result1 == 0 {
 		os.Exit(0)
 	} else {
-		fmt.Println(os.Args[1], "is prime")
+		fmt.Println(data1temp, "is prime")
 	}
 }
 
