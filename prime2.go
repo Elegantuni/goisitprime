@@ -14,7 +14,7 @@ func isPrime(data1 string) int {
 
 	i, _ := strconv.Atoi(data1)
 
-	if i == 0 || i == 1 || i == 2 {
+	if i == 2 {
 		return 1
 	}
 
@@ -34,11 +34,10 @@ func isPrime(data1 string) int {
 	
 	for (index1.Cmp(inttemp)) <= 0 {
 		var theresult1 = &big.Int{}
-		var theresult = &big.Int{}
 
-		theresult = theresult1.Mod(thenumber, index1)
+		theresult1.Mod(thenumber, index1)
 
-		if theresult.Cmp(tempzero) == 0 {
+		if theresult1.Cmp(tempzero) == 0 {
 			fmt.Println(data1, "isn't prime, because it is divisible by", index1)
 
 			return 0
