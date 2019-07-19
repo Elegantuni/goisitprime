@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"strconv"
 	"math/big"
 )
 
@@ -11,12 +10,6 @@ func isPrime(data1 string) int {
 	var index1  = &big.Int{}
 	var indextemp = &big.Int{}
 	var tempzero = &big.Int{}
-
-	i, _ := strconv.Atoi(data1)
-
-	if i == 2 {
-		return 1
-	}
 
 	index1.SetInt64(2)
 	indextemp.SetInt64(1)
@@ -30,8 +23,6 @@ func isPrime(data1 string) int {
 	floattemp.Sqrt(numberf)
 	floattemp.Int(inttemp)
 
-	inttemp.Add(inttemp, indextemp)
-	
 	for (index1.Cmp(inttemp)) <= 0 {
 		var theresult1 = &big.Int{}
 
